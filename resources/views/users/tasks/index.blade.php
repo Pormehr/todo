@@ -27,7 +27,10 @@
                     {{--#TODO create done button--}}
                     <a href="" class="btn btn-success mt-2">{{ __('users/tasks.index.done') }}</a>
                 @endif
-                <a href="{{ route('user.task.edit', $task) }}" class="btn btn-info mt-2">{{ __('users/tasks.index.edit') }}</a>
+                <div>
+                    <a href="{{ route('user.task.edit', $task) }}" class="btn btn-info mt-2">{{ __('users/tasks.index.edit') }}</a>
+                    <a href="{{ route('user.task.destroy', $task) }}" class="btn btn-danger mt-2 ml-2">{{ __('users/tasks.index.delete') }}</a>
+                </div>
             </div>
         </div>
         <br>
