@@ -30,6 +30,9 @@
             <button class="btn btn-success" type="submit">
                 {{ __('users/tasks.create.submit') }}
             </button>
+
+            <a href="{{ route('user.task.index') }}" class="btn btn-danger float-right">{{ __('users/tasks.create.back') }}</a>
+
         </form>
         <br>
 @endsection

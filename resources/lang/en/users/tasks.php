@@ -12,5 +12,6 @@ return [
     'create' => [
         'title' => 'Task Title',
         'submit' => 'Submit',
+        'back' => 'Back',
     ],
 ];
