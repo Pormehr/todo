@@ -9,4 +9,8 @@ return [
         'edit' => 'Edit',
         'no_task' => "You Don't have any task",
     ],
+    'create' => [
+        'title' => 'Task Title',
+        'submit' => 'Submit',
+    ],
 ];

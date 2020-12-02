@@ -18,12 +18,12 @@ class TaskController extends Controller
 
     public function create()
     {
-        //
+        return view('users.tasks.create');
     }
 
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     public function show(Task $task)
