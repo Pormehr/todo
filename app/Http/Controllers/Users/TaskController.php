@@ -10,7 +10,10 @@ class TaskController extends Controller
 {
     public function index()
     {
-        //
+        #TODO Change 1 to Auth::user()->id
+        $tasks = Task::where('user_id', 1)->get();
+
+        return view('users.tasks.index')->withTasks($tasks);
     }
 
     public function create()
