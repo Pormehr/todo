@@ -2,6 +2,12 @@
 
 @section('content')
 
+    @if($result = session('result'))
+        <div class="container alert alert-{{ $result['alert'] }}">
+            {{ $result['message'] }}
+        </div>
+    @endif
+
     <div class="container my-3">
         <a href="{{ route('user.task.create') }}" class="btn btn-outline-dark">
             {{ __('users/tasks.index.create') }}
