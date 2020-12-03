@@ -11,6 +11,7 @@ return [
         'delete' => 'Delete',
         'confirm_delete' => 'Are You Sure You Want to Delete :title Task?',
         'confirm_update' => 'Are You Sure You Want to Update This Task?',
+        'confirm_done' => 'Are You Sure This Task Is Done?',
         'task_updated' => 'Task Updated Successfully',
         'task_deleted' => 'Task Deleted Successfully',
         'task_created' => 'New Task Created Successfully',
