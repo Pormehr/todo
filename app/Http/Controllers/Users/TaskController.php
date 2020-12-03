@@ -42,7 +42,7 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
-        dd($task);
+        return view('users.tasks.edit')->withTask($task);
     }
 
     public function update(Request $request, Task $task)

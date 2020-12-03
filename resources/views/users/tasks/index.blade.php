@@ -32,7 +32,7 @@
                     <form action="{{ route('user.task.destroy', $task) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button onclick="return confirm('Are You Sure You Want to Delete {{ $task->title }} Task?');" class="btn btn-danger mt-2 ml-2">{{ __('users/tasks.index.delete') }}</button>
+                        <button onclick="return confirm('{{ __('users/tasks.index.confirm_delete', ['title' => $task->title]) }}');" class="btn btn-danger mt-2 ml-2">{{ __('users/tasks.index.delete') }}</button>
                     </form>
                 </div>
             </div>
