@@ -4,6 +4,7 @@
 
     <form action="{{ route('user.task.update', $task) }}" class="container bg-dark p-2 text-white mt-5" method="post">
         @csrf
+        @method('PUT')
         <div class="form-group">
             <input type="text" placeholder="{{ __('users/tasks.create.title') }}"
                    name="title" class="form-control @if($errors->taskUpdate->first('title')) is-invalid @endif"

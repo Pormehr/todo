@@ -31,7 +31,7 @@ class TaskController extends Controller
         Task::create($request);
 
         return redirect()->route('user.task.index')->withResult([
-            'message' => 'New Task Created Successfully',
+            'message' => __('users/tasks.index.task_created'),
             'alert' => 'success',
         ]);
     }
@@ -48,7 +48,12 @@ class TaskController extends Controller
 
     public function update(TaskUpdateRequest $request, Task $task)
     {
-        //
+        $task->update($request->validated());
+
+        return redirect()->route('user.task.index')->withResult([
+            'message' => __('users/tasks.index.task_updated'),
+            'alert' => 'success',
+        ]);
     }
 
     public function destroy(Task $task)
@@ -56,7 +61,7 @@ class TaskController extends Controller
         $task->delete();
 
         return redirect()->route('user.task.index')->withResult([
-            'message' => 'Task Deleted Successfully',
+            'message' => __('users/tasks.index.task_deleted'),
             'alert' => 'danger',
         ]);
     }
