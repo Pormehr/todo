@@ -3,7 +3,7 @@
 @section('content')
 
     @if($result = session('result'))
-        <div class="container alert alert-{{ $result['alert'] }}">
+        <div class="container alert alert-{{ $result['alert'] }} mt-3">
             {{ $result['message'] }}
         </div>
     @endif
@@ -27,9 +27,13 @@
                     {{--#TODO create done button--}}
                     <a href="" class="btn btn-success mt-2">{{ __('users/tasks.index.done') }}</a>
                 @endif
-                <div>
+                <div class="d-flex">
                     <a href="{{ route('user.task.edit', $task) }}" class="btn btn-info mt-2">{{ __('users/tasks.index.edit') }}</a>
-                    <a href="{{ route('user.task.destroy', $task) }}" class="btn btn-danger mt-2 ml-2">{{ __('users/tasks.index.delete') }}</a>
+                    <form action="{{ route('user.task.destroy', $task) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button onclick="return confirm('Are You Sure You Want to Delete {{ $task->title }} Task?');" class="btn btn-danger mt-2 ml-2">{{ __('users/tasks.index.delete') }}</button>
+                    </form>
                 </div>
             </div>
         </div>
