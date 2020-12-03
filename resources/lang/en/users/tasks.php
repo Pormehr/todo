@@ -14,6 +14,7 @@ return [
         'task_updated' => 'Task Updated Successfully',
         'task_deleted' => 'Task Deleted Successfully',
         'task_created' => 'New Task Created Successfully',
+        'task_done' => 'Task Done Successfully',
     ],
     'create' => [
         'title' => 'Task Title',

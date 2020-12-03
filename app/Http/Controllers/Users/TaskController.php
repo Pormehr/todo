@@ -52,7 +52,7 @@ class TaskController extends Controller
 
         return redirect()->route('user.task.index')->withResult([
             'message' => __('users/tasks.index.task_updated'),
-            'alert' => 'success',
+            'alert' => 'info',
         ]);
     }
 
@@ -63,6 +63,17 @@ class TaskController extends Controller
         return redirect()->route('user.task.index')->withResult([
             'message' => __('users/tasks.index.task_deleted'),
             'alert' => 'danger',
+        ]);
+    }
+
+    public function doneTask(Task $task)
+    {
+        $task['status'] = 1;
+        $task->update();
+
+        return redirect()->route('user.task.index')->withResult([
+            'message' => __('users/tasks.index.task_done'),
+            'alert' => 'success',
         ]);
     }
 }

@@ -25,7 +25,7 @@
             <div class="d-flex justify-content-between">
                 @if($task->status == 0)
                     {{--#TODO create done button--}}
-                    <a href="" class="btn btn-success mt-2">{{ __('users/tasks.index.done') }}</a>
+                    <a href="{{ route('user.task.done', $task) }}" class="btn btn-success mt-2">{{ __('users/tasks.index.done') }}</a>
                 @endif
                 <div class="d-flex">
                     <a href="{{ route('user.task.edit', $task) }}" class="btn btn-info mt-2">{{ __('users/tasks.index.edit') }}</a>
